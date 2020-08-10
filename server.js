@@ -5,10 +5,8 @@ const cors = require('cors');
 const db = require('knex')({
   client: 'pg',
   connection: {
-    host : 'postgresql-aerodynamic-00412',
-    user : 'louishellman',
-    password : '',
-    database : 'face-recognition'
+    host : 'process.env.DATABASE_URL',
+    ssl: true
   }
 });
 const register = require('./controllers/register');
